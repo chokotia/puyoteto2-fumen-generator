@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>テトリス盤面画像からテト譜生成</title>
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+    <link rel="stylesheet" href="css/styles.css">
+</head>  
+<body>
+    <div class="container">
+        <h1>【ぷよぷよテトリス2】画像からテト譜生成</h1>
+        
+        <div class="upload-area" id="uploadArea">
+            <div class="upload-content" id="uploadContent">
+                <div class="upload-icon">📷</div>
+                <div class="upload-text">画像をここにアップロードしてください。</div>
+                <div class="upload-methods">
+                    <span class="method-tag">クリックしてファイルを選択</span>
+                    <span class="method-tag">ドラッグ&ドロップ</span>
+                    <span class="method-tag">Ctrl+V 貼り付け</span>
+                </div>
+            </div>
+            
+            <!-- 画像と盤面を並べて表示するエリア -->
+            <div class="analysis-content" id="analysisContent" style="display: none;">
+                <div class="content-row">
+                    <div class="image-side">
+                        <h4>📸 読み込まれた画像</h4>
+                        <img id="previewImage" class="preview-image">
+                    </div>
+                    
+                    <div class="board-side">
+                        <!-- テトリス盤面（分析後のみ表示） -->
+                        <div id="boardSection" style="display: none;">
+                            <h4>🧩 認識された盤面</h4>
+                            <div id="tetrisBoard" class="tetris-board"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <input type="file" id="fileInput" accept="image/*" style="display: none;">
+        
+        <div id="statusDiv"></div>
+    </div>
+
+    <div class="info-section">
+        <h4>使用方法</h4>
+        <ul>
+            <li>ぷよぷよテトリス2の盤面画像（対テトリス専用）を読み込ませてください。テトリス譜面に変換します。</li>
+            <li>入力画像については<a href="./assets/sample_images.zip" download="sample_images.zip">サンプル画像</a>をダウンロードして参考にしてください</li>
+            <li>Windows PCを使用している場合は、Win + Shift + Sで盤面画像をコピーし、Ctr + V で貼り付けると楽に作業できます。</li>
+        </ul>
+        <h4>備考</h4>
+        <ul>
+            <li>モデルの学習環境については、<a href="https://github.com/chokotia/puyoteto2-board-detector" target="_blank" rel="noopener">GitHub</a> を参照ください。</li>
+            <li>何かございましたら <a href="mailto:chokotia0527@gmail.com">chokotia0527@gmail.com</a> まで。</li>
+        </ul>
+    </div>
+
+    <!-- 外部ライブラリ -->
+    <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web@1.16.0/dist/ort.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/chokotia/tetris-fumen-browser/dist/tetris-fumen.min.js"></script>
+
+    <!-- アプリケーション -->
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>
