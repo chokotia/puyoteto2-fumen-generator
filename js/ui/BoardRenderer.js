@@ -1,4 +1,3 @@
-// ui/BoardRenderer.js - テトリス盤面表示 UI
 export default class BoardRenderer {
     constructor(appState) {
         this.appState = appState;

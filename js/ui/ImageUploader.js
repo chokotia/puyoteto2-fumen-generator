@@ -1,4 +1,3 @@
-// ui/ImageUploader.js - 画像アップロード UI
 import ImageService from '../services/ImageService.js';
 
 export default class ImageUploader {

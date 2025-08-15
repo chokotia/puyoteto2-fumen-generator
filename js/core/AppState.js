@@ -1,4 +1,3 @@
-// core/AppState.js - アプリケーション状態管理
 export default class AppState {
     constructor() {
         this.state = {

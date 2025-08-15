@@ -1,4 +1,3 @@
-// services/ImageService.js - 画像処理サービス
 import { cropFrameAdvanced } from '../utils/imageUtils.js';
 
 export default class ImageService {

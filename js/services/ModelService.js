@@ -1,4 +1,3 @@
-// services/ModelService.js - AIモデル操作サービス
 import { preprocessImage } from '../utils/imageUtils.js';
 import { CONFIG } from '../utils/constants.js';
 
